@@ -1,0 +1,64 @@
+<div class="panel panel-info">
+    <div class="panel-heading"><span class="glyphicon glyphicon-sound-stereo"></span>Video Phổ Biến</div>
+    <div class="panel-body">
+        <div class="container" ng-controller="videocontrol">
+            <div class="row">
+                <div class="col-md-12">
+                        <div id="Carousel" class="carousel slide">
+                         
+                        <ol class="carousel-indicators">
+                            <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#Carousel" data-slide-to="1"></li>
+                            <li data-target="#Carousel" data-slide-to="2"></li>
+                        </ol>
+                         
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            
+                        <div class="item active">
+                            <div class="row video" id="list-video">
+                                <div class="col-md-3" ng-repeat="video in listVideo" ng-click="showVideo(video.id.videoId)"><a class="thumbnail"><img ng-src="{{video.snippet.thumbnails.medium.url}}" alt="Image" style="max-width:100%;"></a><div class="text-center"><strong><div class="titlevideo">{{video.snippet.title}}</div></strong></div></div>
+                            </div><!--.row-->
+                        </div><!--.item-->
+                         
+                        <div class="item">
+                            <div class="row video" id="list-video">
+                                <div class="col-md-3" ng-repeat="video in listVideo1" ng-click="showVideo1(video.id.videoId)"><a class="thumbnail"><img ng-src="{{video.snippet.thumbnails.medium.url}}" alt="Image" style="max-width:100%;"></a><div class="text-center"><strong><div class="titlevideo">{{video.snippet.title}}</div></strong></div></div>
+                            </div>
+                        </div>
+                         
+                        <div class="item">
+                            <div class="row" id="list-video">
+                                <div class="col-md-3" ng-repeat="video in listVideo2" ng-click="showVideo2(video.id.videoId)"><a class="thumbnail"><img ng-src="{{video.snippet.thumbnails.medium.url}}" alt="Image" style="max-width:100%;"></a><div class="text-center"><strong><div class="titlevideo">{{video.snippet.title}}</div></strong></div></div>
+                            </div>
+                        </div>
+                         
+                        </div><!--.carousel-inner-->
+                        <!--   <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+                          <a data-slide="next" href="#Carousel" class="right carousel-control">›</a> -->
+                    </div><!--.Carousel-->
+                </div>
+            </div>
+            <div id="myModal" class="modal" ng-show="isShowVideo">
+                <span class="close" ng-click="closeVideo()">&times;</span>
+                <iframe class="modal-content" id="video-frame" width="700" height="415" 
+                      ng-src="{{mySrc}}" frameborder="0" allowfullscreen></iframe>
+                <div id="caption"></div>
+            </div>  
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="panel panel-info" id="panelcontentsearch" ng-show="panel">
+    <div class="panel-heading"><span class="glyphicon glyphicon-sound-stereo"></span> Search Video</div>
+    <div class="panel-body">
+        <div class="row" id="my-contentsearch">  
+        </div>
+    </div>
+</div>
+
+
